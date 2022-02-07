@@ -21,7 +21,7 @@ services:
       - DATABASE_PASSWORD=password123
       - DATABASE_NAME=fastapi
       - DATABASE_USERNAME=postgres 
-    command: bash -c " cd backend  && alembic upgrade head  && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    command: bash -c " cd antstack_backend  && alembic upgrade head  && uvicorn app.main:app --host 0.0.0.0 --port 8000"
     depends_on:
       - postgres
   frontend:
