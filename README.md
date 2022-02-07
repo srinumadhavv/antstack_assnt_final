@@ -101,7 +101,9 @@ response:{
     "discount": 10
 }
 
-14.Note: you can access all the frontend apis through http://localhost:3000/ on which you can see the response if the api is used properly to checkout the status code or result use cmd+shift+i then inspect and then head to network hit on api to verify response
+14.Note: you can access all the frontend apis through http://localhost:3000/ on which you can see the response if the api is used properly to checkout the status code or result use cmd+shift+i then inspect and then head to network hit on api to verify response 
+
+ * please makesure ports 3000 and 8000 are available on host machine.
 
 15.Any clarifications if needed in setup please message to 8639566476 or srinumadhavvysyaraju@gmail.com
 
