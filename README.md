@@ -26,3 +26,82 @@ https://user-images.githubusercontent.com/43718077/152755801-a61c5fe6-f896-41ba-
 
 10. Use postman to test apis:
 
+    redirect to http://localhost:8000/docs for proper api documentation on using the apis
+    
+11. Create coupon api:
+
+request_type: POST
+
+request_url: http://localhost:8000/coupons/create
+
+body: {
+  "id": "coupon1",
+  "start_date": 1644129883,
+  "expiry_date": 1744129883,
+  "type": "fixed",
+  "discount": 10,
+  "min_amount": 200
+}
+
+response: {
+    "id": "coupon2",
+    "expiry_date": 1744129883,
+    "discount": 10,
+    "min_amount": 200
+}
+
+12. Get coupons api:
+
+request_type: GET
+
+request_url: http://localhost:8000/coupons/
+
+response:{
+    "coupons": [
+        {
+            "type": "fixed",
+            "id": "coupon3",
+            "expiry_date": 1744129883,
+            "start_date": 1644129883,
+            "discount": 10,
+            "min_amount": 200
+        },
+        {
+            "type": "fixed",
+            "id": "coupon1",
+            "expiry_date": 1744129883,
+            "start_date": 1644129883,
+            "discount": 10,
+            "min_amount": 200
+        },
+        {
+            "type": "fixed",
+            "id": "coupon2",
+            "expiry_date": 1744129883,
+            "start_date": 1644129883,
+            "discount": 10,
+            "min_amount": 200
+        }
+    ]
+}
+
+13. validate coupons api
+
+request_type: POST
+
+request_url: http://localhost:8000/checkout
+
+body:{
+  "amount": 1000,
+  "coupon": "coupon1"
+}
+
+response:{
+    "total_amount": 990,
+    "discount": 10
+}
+
+14.Note: you can access all the frontend apis through http://localhost:3000/ on which you can see the response if the api is used properly to checkout the status code or result use cmd+shift+i then inspect and then head to network hit on api to verify response
+
+15.Any clarifications if needed in setup please message to 8639566476 or srinumadhavvysyaraju@gmail.com
+
