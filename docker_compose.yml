@@ -1,0 +1,36 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_DB=fastapi
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+  api:
+    image: srinumadhavv/antstack_backend
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/usr/src/app
+    # env_file:
+    #     - ./.env
+    environment:
+      - DATABASE_HOSTNAME=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_PASSWORD=password123
+      - DATABASE_NAME=fastapi
+      - DATABASE_USERNAME=postgres 
+    command: bash -c " cd backend  && alembic upgrade head  && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    depends_on:
+      - postgres
+  frontend:
+    image: srinumadhavv/antstack_frontend
+    ports: 
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+    depends_on: 
+      - backend
+volumes:
+  postgres-db:
