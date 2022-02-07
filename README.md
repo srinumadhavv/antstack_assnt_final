@@ -1,6 +1,6 @@
 # antstack_Assignment
 
-This is an application built for ANSTACK as an Assignmnent. Application uses FASTAPI for Backend, React for FrontEnd, Postgres for Database , Alembic for Database Migration and Docker for dockerizing Application .
+This is an application built for ANSTACK as an Assignmnent. Application uses FASTAPI for Backend, React for FrontEnd, Postgres for Database , Alembic for Database Migration and Docker for containeraizing Application .
 
 TO USE THIS APPLICATION :
 
